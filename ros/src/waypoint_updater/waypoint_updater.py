@@ -55,6 +55,7 @@ class WaypointUpdater(object):
         rate = rospy.Rate(50) # 50 Hz
         while not rospy.is_shutdown():
             if self.pose and self.base_waypoints: # self.waypoint_tree instead?
+                # TODO: Inline publish_waypoints and generate_lane here for brevity.
                 self.publish_waypoints()
             rate.sleep()
 
